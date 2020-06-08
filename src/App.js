@@ -1,26 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
+//import logo from './logo.svg';
 import './App.css';
+import NaveBar from './components/NaveBar';
+//import Customers from './components/Customers';
+import CurrentReview from'./components/CurrentReview';
+import ContentBody from './components/ContentBody'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  
+  render() {
+
+    // created an array of customers
+  //  let myCustomers = ["Alex","John","Mary"]
+  // <Customers names = {myCustomers} />
+
+    return (
+      <div>
+      
+
+      <NaveBar  nave={""}/>
+      <CurrentReview /> 
+      <ContentBody likes={" 12 comments   124 likes "} hello={"Hello Watchkit"} /> 
+      <ContentBody likes={" 15 comments    45 likes"} hello={"Introduction to Swift"} /> 
+      </div>
+    )
+  }
+
 }
 
 export default App;
