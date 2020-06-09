@@ -1,3 +1,29 @@
+
+
+.images  {
+  display: flex;
+  flex-wrap: wrap;
+ 
+}
+.images img {
+  width: 100px;
+  height: 100px;
+}
+.images div {
+  display: flex;
+  flex-direction: column;
+}
+
+.boxes {
+  height: 50%;
+  width: 50%;
+}
+.Header {
+  display: flex;
+  padding: 10px;
+  margin: 10px;
+}
+/*
 body {
   margin: auto 20;
   font-family: Arial, Helvetica, sans-serif;
@@ -35,3 +61,9 @@ code {
 .commentsLikes {
   background-color: orange;
 }
+
+.Stepperbox {
+  display: flex;
+  border:  2px 1px;
+}
+*/

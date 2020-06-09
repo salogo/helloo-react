@@ -1,31 +1,63 @@
 import React, { Component } from 'react';
-//import logo from './logo.svg';
 import './App.css';
-import NaveBar from './components/NaveBar';
-//import Customers from './components/Customers';
-import CurrentReview from'./components/CurrentReview';
-import ContentBody from './components/ContentBody'
+//import Movies from './components/Movies'
+import Books from './components/Books';
+import Headers from './components/Header'
+
 
 class App extends Component {
-  
-  render() {
 
-    // created an array of customers
-  //  let myCustomers = ["Alex","John","Mary"]
-  // <Customers names = {myCustomers} />
+  constructor() {
+    super() // calls the constructor of the Component 
+  
+    this.state = {
+      counter: 0,
+      movies: [] ,
+      books:[]
+    }
+
+
+  }
+/*
+    componentDidMount() {
+      // http://www.omdbapi.com/?s=batman&apikey=564727fa
+      fetch('http://www.omdbapi.com/?s=batman&apikey=564727fa')
+      .then(response => response.json())
+      .then(result => {
+          
+          this.setState({
+              movies: result.Search
+          })      
+      })
+  }
+
+    <Movies listOfMovies = {this.state.movies} />
+  */
+
+  componentDidMount() {
+    fetch('https://raw.githubusercontent.com/benoitvallon/100-best-books/master/books.json')
+    .then(response => response.json())
+    .then(result => {
+
+      console.log(result)
+        
+        this.setState({
+            books: result
+        })      
+    })
+}
+
+  render() {
 
     return (
       <div>
-      
+         <Headers  Home="Home" MyBooks="My Books" Browse="Browse Community"  Search="Search books"  SignIn="Sign In"  Join="Join" />
+         <Books  listOfBooks ={this.state.books}/>
 
-      <NaveBar  nave={""}/>
-      <CurrentReview /> 
-      <ContentBody likes={" 12 comments   124 likes "} hello={"Hello Watchkit"} /> 
-      <ContentBody likes={" 15 comments    45 likes"} hello={"Introduction to Swift"} /> 
       </div>
     )
   }
-
+  
 }
 
 export default App;

@@ -5,10 +5,6 @@ class ContentBody extends Component {
 
     render() {
 
-    
-        
-
-
         /// display a list 
         return (
             <div className="ContentBody"> 
